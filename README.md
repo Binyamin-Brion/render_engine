@@ -12,7 +12,7 @@ A work in progress game engine written in Rust.
 * Entity component system for flexible entity properties
 * Shadow mapping for numerous light sources
 
-Technologies Used
+# Technologies Used
 
 * Rust
 * OpenGL 4.5
