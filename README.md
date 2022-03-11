@@ -2,7 +2,7 @@
 
 A work in progress game engine written in Rust.
 
-# Sample scene
+# Sample Scene
 ![image](https://user-images.githubusercontent.com/36389791/157958692-ff50feee-ea31-4355-9019-88ef7695fee3.png)
 
 # Features
