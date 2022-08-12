@@ -80,7 +80,7 @@ pub fn create_default_render_system(draw_function: DrawFunction, light_draw_func
                 LayoutInformation::new(LayoutType::Vec4Float, LayoutInstance::Divisor0(1, 1_000_000), LayoutUse::PerModel, "texCoords"),
                 LayoutInformation::new(LayoutType::Vec4Uint, LayoutInstance::Divisor0(1, 1_000_000), LayoutUse::PerModel, "layers"),
                 LayoutInformation::new(LayoutType::Vec3Float, LayoutInstance::Divisor0(1, 1_000_000), LayoutUse::PerModel, "normal"),
-                LayoutInformation::new(LayoutType::Mat4x4Float, LayoutInstance::Divisor1(1, 1_500_000), LayoutUse::PerInstance, "translation"),
+                LayoutInformation::new(LayoutType::Mat4x4Float, LayoutInstance::Divisor1(2, 1_500_000), LayoutUse::PerInstance, "translation"),
             ],
             out_variables: vec!
             [
