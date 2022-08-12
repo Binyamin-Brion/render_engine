@@ -32,9 +32,9 @@ Debugging
 ------------
 
 * Playback functionality. Upon exiting the program either through a graceful exit or unexpected termination, play back
-the history leading to the exit. Additionally is the ability to detach the camera from th playback and observe the scene from
-a different angle while viewing a historical scene. Furthermore is the ability to continue the playback past the last stored frame to
-see if any changes made in code had the desired effect.
+the history leading to the exit. Additionally is the ability to detach the camera from the playback and observe the scene from
+a different angle while viewing a historical scene. Furthermore is the ability to continue the playback past the last stored historical frame to
+see if any game logic changes made in the code had the desired effect.
 
 Technologies Used
 ===============
