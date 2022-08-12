@@ -1,0 +1,3 @@
+To start debugging, change the "user_upload_information.is_debugging = false;" in main.rs to "user_upload_information.is_debugging = true;"
+This will read the contents of the debug_logs, which stores the previous run of the engine. The engine will create this folder
+on the first run of the engine.
