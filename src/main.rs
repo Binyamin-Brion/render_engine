@@ -47,7 +47,7 @@ fn main()
 
     if cfg!(debug_assertions)
     {
-        user_upload_information.world_section_length = 64;
+        user_upload_information.world_section_length = 128;
     }
 
     user_upload_information.is_debugging = false;
