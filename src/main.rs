@@ -20,7 +20,7 @@ mod space_logic;
 fn main()
 {
     let window_dimensions = (1280, 720);
-    let draw_distance = 500.0;
+    let draw_distance = 1000.0;
 
     let camera = CameraBuilder::new(window_dimensions)
         .with_position(vec3(1000.0, 1000.0, 1150.0))
