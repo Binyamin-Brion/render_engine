@@ -4,7 +4,7 @@ use std::sync::Arc;
 use hashbrown::{HashMap, HashSet};
 use nalgebra_glm::{TMat4, TVec3, vec3};
 use crate::culling::render_frustum_culler::RenderFrustumCuller;
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::exports::camera_object::{Camera, CameraBuilder};
 use crate::exports::light_components::{FindLightType, LightInformation};
 use crate::exports::movement_components::Position;

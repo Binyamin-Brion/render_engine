@@ -1,5 +1,5 @@
 use nalgebra_glm::{TVec4, TMat4x4, TVec3, vec4};
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::world::bounding_volumes::aabb::StaticAABB;
 
 /// Represents the possible planes if a frustum

@@ -12,7 +12,7 @@ use rayon::iter::ParallelIterator;
 use rayon::prelude::ParallelSliceMut;
 use crate::culling::logic_frustum_culler::LogicFrustumCuller;
 use crate::culling::render_frustum_culler::RenderFrustumCuller;
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::exports::camera_object::{Camera, MovementFactor};
 use crate::exports::light_components::LightInformation;
 use crate::exports::load_models::{InstanceLogic, RegisterInstancesFunction};

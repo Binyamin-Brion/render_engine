@@ -1,5 +1,5 @@
 use nalgebra_glm::TVec3;
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::world::bounding_volumes::aabb::StaticAABB;
 
 /// Determines if a bounding volume is near enough to the camera to have any entities within have

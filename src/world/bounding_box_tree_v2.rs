@@ -1,6 +1,6 @@
 use hashbrown::{HashMap, HashSet};
 use serde::{Serialize, Deserialize};
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::exports::light_components::FindLightType;
 use crate::helper_things::aabb_helper_functions;
 use crate::objects::ecs::ECS;

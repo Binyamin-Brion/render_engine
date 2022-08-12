@@ -5,7 +5,7 @@ use nalgebra_glm::TVec3;
 use parking_lot::Mutex;
 use rayon::iter::ParallelIterator;
 use rayon::prelude::ParallelSlice;
-use crate::culling::traits::TraversalDecider;
+use crate::culling::r#trait::TraversalDecider;
 use crate::flows::shared_constants::WORLD_SECTION_LENGTH;
 use crate::world::bounding_box_tree_v2::{BoundingBoxTree, UniqueWorldSectionId};
 use crate::world::bounding_volumes::aabb::StaticAABB;
