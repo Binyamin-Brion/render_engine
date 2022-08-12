@@ -1,6 +1,8 @@
 use glfw::Key;
+use nalgebra_glm::vec3;
 use render_engine::exports::camera_object::{Camera, MovementFactor};
 use render_engine::exports::logic_components::UserInputLogic;
+use render_engine::exports::movement_components::{Acceleration, Velocity};
 use render_engine::objects::ecs::ECS;
 use render_engine::objects::entity_change_request::{EntityChangeInformation, EntityChangeRequest};
 use render_engine::objects::entity_id::EntityId;
@@ -92,8 +94,18 @@ pub fn move_camera(this: EntityId, ecs: &ECS, _: &BoundingBoxTree, camera: &mut 
         camera.first_rotation = true;
     }
 
-    let mut entity_changes = EntityChangeRequest::new(this);
-    entity_changes.add_new_change(move_factor);
-
-    vec![EntityChangeInformation::ModifyRequest(entity_changes)]
+    if !input.is_key_down(Key::C)
+    {
+        let mut entity_changes = EntityChangeRequest::new(this);
+        entity_changes.add_new_change(move_factor);
+        vec![EntityChangeInformation::ModifyRequest(entity_changes)]
+    }
+    else
+    {
+        // Force stop the user
+        let mut entity_changes = EntityChangeRequest::new(this);
+        entity_changes.add_new_change(Velocity::new(vec3(0.0, 0.0, 0.0)));
+        entity_changes.add_new_change(Acceleration::new(vec3(0.0, 0.0, 0.0)));
+        vec![EntityChangeInformation::ModifyRequest(entity_changes)]
+    }
 }
