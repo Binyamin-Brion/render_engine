@@ -15,7 +15,7 @@ Features
 ==========
 
 Object Rendering
------------------
+-------------------
 
 * Deferred rendering for reduced cost of lighting calculations on the GPU compared to forward rendering
 * Specify render systems to allow different shader programs to execute on the same objects
@@ -37,7 +37,7 @@ a different angle while viewing a historical scene. Furthermore is the ability t
 see if any changes made in code had the desired effect.
 
 Technologies Used
--------------------
+===============
 
 * OpenGL 4.5
 * Rust
