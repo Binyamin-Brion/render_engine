@@ -308,6 +308,12 @@ impl RenderFlow
             }
         }
 
+        unsafe
+            {
+                gl::BindFramebuffer(gl::FRAMEBUFFER, 0);
+                gl::Clear(gl::COLOR_BUFFER_BIT | gl::DEPTH_BUFFER_BIT);
+            }
+
         for index in 0..self.get_shadow_render_system_index()
         {
             self.render_systems[index].use_shader_program();

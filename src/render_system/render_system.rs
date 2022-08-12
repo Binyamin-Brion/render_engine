@@ -500,12 +500,6 @@ impl RenderSystem
 
             (self.transparency_draw_function)(&mut first_render_pass_draw_param);
 
-            unsafe
-                {
-                    gl::BindFramebuffer(gl::FRAMEBUFFER, 0);
-                    gl::Clear(gl::COLOR_BUFFER_BIT | gl::DEPTH_BUFFER_BIT);
-                }
-
             if let Some(ref mut second_pass_render) = self.second_render_pass_resources
             {
                 if let Some(ref mut first_render_fbo) = self.first_render_pass_resources.deferred_rendering_fbo
