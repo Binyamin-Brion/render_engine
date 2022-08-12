@@ -7,6 +7,9 @@ A rendering engine that handles rendering objects as well as executing any logic
 there is a visual representation of it, as well as the light it casts on other objects, and may spin as well. Providing the appropriate parameters to model
 this object, this engine will render the object and its visual influence on the scene. The engine will also make sure the star rotates at the provided speed.
 
+Sample Scene
+=======
+
 Features
 ==========
 
@@ -23,6 +26,14 @@ Object Logic
 * Entity Component System for cache friendly object data storage
 * Multi-threaded execution of object logic
 * Store object position within the world as a hashmap, providing quick operations to ensure only visible objects have their logic executd
+
+Debugging
+------------
+
+* Playback functionality. Upon exiting the program either through a graceful exit or unexpected termination, play back
+the history leading to the exit. Additionally is the ability to detach the camera from th playback and observe the scene from
+a different angle while viewing a historical scene. Furthermore is the ability to continue the playback past the last stored frame to
+see if any changes made in code had the desired effect.
 
 Technologies Used
 -------------------
