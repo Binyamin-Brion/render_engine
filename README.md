@@ -9,6 +9,7 @@ this object, this engine will render the object and its visual influence on the 
 
 Sample Scene
 =======
+![Alt Text](https://github.com/Binyamin-Brion/render_engine/blob/master/sample_scene/sample_scene_space.png)
 
 Features
 ==========
