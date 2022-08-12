@@ -78,7 +78,8 @@ pub fn render_world(mut args: RenderInputArgs, mut user_load_info: UserUploadInf
 
                     create_default_render_system
                         (
-                            i.draw_function, i.draw_light_function, i.draw_transparency_function, i.instance_layout_update_fn, i.level_of_views, i.window_resolution, i.sky_boxes, i.max_count_lights,
+                            i.draw_function, i.draw_light_function, i.draw_transparency_function,
+                            i.instance_layout_update_fn, i.level_of_views, i.window_resolution, i.sky_boxes, i.max_count_lights,
                             no_light_source_cutoff, default_diffuse_factor
                         )
                 }

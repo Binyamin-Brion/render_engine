@@ -7,11 +7,11 @@ use crate::objects::entity_change_request::EntityChangeInformation;
 pub enum FrameChange
 {
     CameraViewChange(SerializableCameraInfo), // f32 = Time delta
-CameraStationary,
+    CameraStationary,
     DeltaTime(f32),
     DrawDistancesChange(f32, f32, f32), // Near, Far, FOV
-WindowDimensionsChange((i32, i32)), // Width, Height
-EntityChange(Vec<EntityChangeInformation>),
+    WindowDimensionsChange((i32, i32)), // Width, Height
+    EntityChange(Vec<EntityChangeInformation>),
     EndFrameChange,
 }
 
