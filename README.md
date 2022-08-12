@@ -26,7 +26,7 @@ Object Logic
 
 * Entity Component System for cache friendly object data storage
 * Multi-threaded execution of object logic
-* Store object position within the world as a hashmap, providing quick operations that ensure only visible objects have their logic executd
+* Store object position within the world as a hashmap, providing quick operations that ensure only visible objects have their logic executed
 
 Debugging
 ------------
