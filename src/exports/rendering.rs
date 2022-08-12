@@ -35,7 +35,7 @@ pub struct LevelOfView
 }
 
 /// Holds variables required to execute a render function
-#[allow(dead_code)]
+
 pub struct DrawParam<'a>
 {
     uniforms: UniformBufferInformation<'a>,
@@ -46,7 +46,6 @@ pub struct DrawParam<'a>
     camera: &'a Camera,
     logical_entities: &'a ECS,
     tree: &'a BoundingBoxTree,
-    logical_lookup: &'a HashMap<String, EntityId>,
     render_system: u32,
     input_history: &'a InputHistory,
     draw_fn_accessible_fbo: &'a mut HashMap<String, FBO>,
@@ -64,7 +63,7 @@ impl<'a> DrawParam<'a>
     ///
     /// `uniform_name` - the name of the uniform
     /// `data` - the matrix to upload to the given uniform
-    #[allow(dead_code)]
+
     pub fn write_uniform_mat4_stall<A: AsRef<str>>(&mut self, uniform_name: A, data: TMat4x4<f32>)
     {
         unsafe
@@ -79,7 +78,7 @@ impl<'a> DrawParam<'a>
     ///
     /// `uniform_name` - the name of the uniform
     /// `data` - the unsigned int to upload to the given uniform
-    #[allow(dead_code)]
+
     pub fn write_uint<A: AsRef<str>>(&mut self, uniform_name: A, data: u32)
     {
         unsafe
@@ -93,7 +92,7 @@ impl<'a> DrawParam<'a>
     ///
     /// `uniform_name` - the name of the uniform
     /// `data` - the int to upload to the given uniform
-    #[allow(dead_code)]
+
     pub fn write_int<A: AsRef<str>>(&mut self, uniform_name: A, data: i32)
     {
         unsafe
@@ -107,7 +106,7 @@ impl<'a> DrawParam<'a>
     ///
     /// `uniform_name` - the name of the uniform
     /// `data` - the 3D vector of floats to upload to the given uniform
-    #[allow(dead_code)]
+
     pub fn write_vec3<A: AsRef<str>>(&mut self, uniform_name: A, data: TVec3<f32>)
     {
         unsafe
@@ -121,7 +120,7 @@ impl<'a> DrawParam<'a>
     ///
     /// `uniform_name` - the name of the uniform
     /// `data` - the 4D vector of floats to upload to the given uniform
-    #[allow(dead_code)]
+
     pub fn write_vec4<A: AsRef<str>>(&mut self, uniform_name: A, data: TVec4<f32>)
     {
         unsafe
@@ -134,7 +133,7 @@ impl<'a> DrawParam<'a>
     /// Get the FBO associated with the given name
     ///
     /// `fbo_name` - the name of the FBO to return
-    #[allow(dead_code)]
+
     pub fn get_fbo<A: AsRef<str>>(&mut self, fbo_name: A) -> Option<&mut FBO>
     {
         self.draw_fn_accessible_fbo.get_mut(fbo_name.as_ref())
@@ -231,7 +230,7 @@ impl<'a> DrawParam<'a>
     }
 
     /// Get the input history
-    #[allow(dead_code)]
+
     pub fn get_input_history(&self) -> &InputHistory
     {
         self.input_history
@@ -589,7 +588,6 @@ impl<'a> CreateDrawParam<'a>
             camera: self.0.camera.unwrap(),
             logical_entities: self.0.logical_entities.unwrap(),
             tree: self.0.tree.unwrap(),
-            logical_lookup: self.0.logical_lookup.unwrap(),
             render_system: self.0.render_system.unwrap(),
             input_history: self.0.input_history.unwrap(),
             draw_fn_accessible_fbo: self.0.draw_fn_accessible_fbo.unwrap(),

@@ -20,15 +20,11 @@ use crate::world::bounding_box_tree_v2::{BoundingBoxTree, UniqueWorldSectionId};
 /// as the data structure of the layout does not specify this. For example,
 /// an ivec3 could three ints, or three shorts that are interpreted as ints
 #[derive(Copy, Clone)]
-#[allow(dead_code)]
+
 pub enum LayoutType
 {
-    Vec2Int,
-    Vec2Uint,
-    Vec2Float,
     Vec3Float,
     Vec4Float,
-    Vec3Uint,
     Vec4Uint,
     Mat4x4Float
 }
@@ -40,12 +36,8 @@ impl LayoutType
     {
         match *self
         {
-            LayoutType::Vec2Int => "ivec2".to_string(),
-            LayoutType::Vec2Uint => "uvec2".to_string(),
-            LayoutType::Vec2Float => "vec2".to_string(),
             LayoutType::Vec3Float => "vec3".to_string(),
             LayoutType::Vec4Float => "vec4".to_string(),
-            LayoutType::Vec3Uint => "uvec3".to_string(),
             LayoutType::Vec4Uint => "uvec4".to_string(),
             LayoutType::Mat4x4Float => "mat4x4".to_string()
         }
@@ -200,23 +192,14 @@ impl Constant
 
 /// Information required to declare out variables
 #[derive(Copy, Clone)]
-#[allow(dead_code)]
 pub enum SharedVariableType
 {
-    Vec2,
     Vec3,
     Vec4,
-    Mat4x4Float,
     Int,
     UInt,
-    Float,
-    UVec3,
     UVec4,
-    UIntArray(u16),
-    FloatArray(u16),
-    Vec3Array(u16),
     Vec4Array(u16),
-    Mat4Array(u16),
 }
 
 impl SharedVariableType
@@ -226,20 +209,12 @@ impl SharedVariableType
     {
         match *self
         {
-            SharedVariableType::UVec3 => "uvec3".to_string(),
             SharedVariableType::UVec4 => "uvec4".to_string(),
-            SharedVariableType::Vec2 =>"vec2".to_string(),
             SharedVariableType::Vec3 => "vec3".to_string(),
             SharedVariableType::Vec4 => "vec4".to_string(),
-            SharedVariableType::Mat4x4Float => "mat4".to_string(),
             SharedVariableType::Int => "int".to_string(),
             SharedVariableType::UInt => "uint".to_string(),
-            SharedVariableType::Float => "float".to_string(),
-            SharedVariableType::UIntArray(_) => "uint".to_string(),
-            SharedVariableType::FloatArray(_) => "float".to_string(),
-            SharedVariableType::Vec3Array(_) => "vec3".to_string(),
             SharedVariableType::Vec4Array(_) => "vec4".to_string(),
-            SharedVariableType::Mat4Array(_) => "mat4".to_string(),
         }
     }
 }
@@ -280,7 +255,7 @@ impl OutVariables
 /// Specifies the format that a texture can have
 #[repr(u32)]
 #[derive(Copy, Clone, Eq, PartialEq)]
-#[allow(dead_code)]
+
 pub enum TextureFormat
 {
     Depth = gl::DEPTH_COMPONENT24,
@@ -312,7 +287,7 @@ pub struct TextureInformation
 /// Type of min filter option to use for textures
 #[repr(u32)]
 #[derive(Copy, Clone)]
-#[allow(dead_code)]
+
 pub enum MinFilterOptions
 {
     Nearest = gl::NEAREST,
@@ -335,7 +310,7 @@ pub enum MagFilterOptions
 /// Type of texture wrap option to use for textures
 #[repr(u32)]
 #[derive(Copy, Clone)]
-#[allow(dead_code)]
+
 pub enum TextureWrap
 {
     ClampToEdge = gl::CLAMP_TO_EDGE,
@@ -369,26 +344,13 @@ impl CubeMapInitInfo
 
 /// >>>>>>>>>>> Enums <<<<<<<<<<<<<
 
-/// Specifies the binding point for a uniform. All uniforms must be in a binding
-/// point; no global uniforms are allowed
-#[repr(u32)]
-#[derive(Copy, Clone, Hash, Eq, PartialEq)]
-#[allow(dead_code)]
-pub enum UniformBinding
-{
-    Point0 = 0,
-    Point1 = 1,
-}
-
 /// Specifies the type of uniform data. Specific data type must be specified
 /// as certain data types do not specify type of member variables. For example,
 /// ivec3 can be three ints or three shorts
 #[derive(Copy, Clone)]
-#[allow(dead_code)]
 pub enum UniformType
 {
     Vec3,
-    Vec4,
     Mat4x4Float,
     Int,
     UInt,
@@ -408,7 +370,6 @@ impl UniformType
         match *self
         {
             UniformType::Vec3 => "vec3".to_string(),
-            UniformType::Vec4 => "vec4".to_string(),
             UniformType::Mat4x4Float => "mat4".to_string(),
             UniformType::Int => "int".to_string(),
             UniformType::UInt => "uint".to_string(),
@@ -511,7 +472,6 @@ impl Uniform
             UniformType::UInt | UniformType::Int | UniformType::Float => 4,
             UniformType::FloatArray(i) => i as usize * 16,
             UniformType::Vec3 => 12,
-            UniformType::Vec4 => 16,
             UniformType::UIntArray(i) => i as usize * 16,
             UniformType::Vec3Array(i) => i as usize * 16,
             UniformType::Vec4Array(i) => i as usize * 16,

@@ -1,16 +1,14 @@
 use std::any::TypeId;
-use nalgebra_glm::{TVec3, vec3, vec4};
+use nalgebra_glm::{TVec3, vec3};
 use rand::{Rng, thread_rng};
 use render_engine::exports::entity_transformer::EntityTransformationBuilder;
 use render_engine::exports::load_models::{UserLoadModelInfo, UserLoadModelInstances, UserUploadInformation};
 use render_engine::exports::movement_components::{Position, Rotation, Scale, VelocityRotation};
 use render_engine::objects::ecs::{ECS, TypeIdentifier};
-use render_engine::objects::entity_change_request::{EntityChangeInformation, EntityChangeRequest};
 use render_engine::objects::entity_id::EntityId;
 use render_engine::world::bounding_box_tree_v2::BoundingBoxTree;
 use render_engine::world::bounding_volumes::aabb::StaticAABB;
 use serde::{Deserialize, Serialize};
-use render_engine::exports::light_components::{FindLightType, LightInformation};
 use crate::space_logic::helper_functionality::directory_lookup::get_model_dir;
 use crate::space_logic::solar_system::system_creator::INSTANCES;
 

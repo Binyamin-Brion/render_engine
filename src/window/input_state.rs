@@ -48,7 +48,7 @@ impl InputHistory
     /// Checks if the given key is pressed
     ///
     /// `key` - the key to check if it is pressed
-    #[allow(dead_code)]
+
     pub fn is_key_down(&self, key: Key) -> bool
     {
         match self.keys.get(&key)
@@ -61,7 +61,7 @@ impl InputHistory
     /// Checks if the given button is pressed
     ///
     /// `button` - the cursor button to check if it is pressed
-    #[allow(dead_code)]
+
     pub fn is_mouse_down(&self, button: MouseButton) -> bool
     {
         match self.buttons.get(&button)
@@ -110,7 +110,7 @@ impl CurrentFrameInput
     /// Checks if the given key is pressed
     ///
     /// `key` - the key to check if it is pressed
-    #[allow(dead_code)]
+
     pub fn is_key_down(&self, key: Key) -> bool
     {
         match self.keys.get(&key)
@@ -120,7 +120,7 @@ impl CurrentFrameInput
         }
     }
 
-    #[allow(dead_code)]
+
     pub fn was_key_released(&self, key: Key) -> bool
     {
         match self.keys.get(&key)
@@ -130,7 +130,7 @@ impl CurrentFrameInput
         }
     }
 
-    #[allow(dead_code)]
+
     pub fn get_latest_cursor_pos(&self) -> Option<(i32, i32)>
     {
         self.latest_cursor_pos
@@ -139,7 +139,7 @@ impl CurrentFrameInput
     /// Checks if the given button is pressed
     ///
     /// `button` - the cursor button to check if it is pressed
-    #[allow(dead_code)]
+
     pub fn is_mouse_down(&self, button: MouseButton) -> bool
     {
         match self.buttons.get(&button)

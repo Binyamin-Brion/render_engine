@@ -18,7 +18,7 @@ impl StaticAABB
     /// `x_range` - the space the bounding volume takes in the x dimension
     /// `y_range` - the space the bounding volume takes in the y dimension
     /// `z_range` - the space the bounding volume takes in the z dimension
-    #[allow(dead_code)]
+
     pub fn new(x_range: XRange, y_range: YRange, z_range: ZRange) -> StaticAABB
     {
         StaticAABB{ x_range, y_range, z_range }
@@ -27,7 +27,7 @@ impl StaticAABB
     /// Move the bounding volume in the given direction
     ///
     /// `move_vector` - vector specifying how much to move the volume in each dimension
-    #[allow(dead_code)]
+
     pub fn translate(&mut self, move_vector: TVec3<f32>)
     {
         self.x_range.translate(move_vector.x);
@@ -38,7 +38,7 @@ impl StaticAABB
     /// Merges two AABBs to form one that could hold of the given AABB
     ///
     /// `other_aabb` - the AABB to merge with this one
-    #[allow(dead_code)]
+
     pub fn combine_aabb(&self, other_aabb: &StaticAABB) -> StaticAABB
     {
         StaticAABB::new
@@ -50,7 +50,7 @@ impl StaticAABB
     }
 
     /// Get the centre of the bounding volume
-    #[allow(dead_code)]
+
     pub fn centre(&self) -> TVec3<f32>
     {
         vec3
@@ -64,7 +64,7 @@ impl StaticAABB
     /// Check if the other AABB overlaps with this bounding volume
     ///
     /// `other_aabb` - the volume to check for an overlap with this one
-    #[allow(dead_code)]
+
     pub fn intersect(&self, other_aabb: &StaticAABB) -> bool
     {
         self.x_range.overlap_range(&other_aabb.x_range) &&
@@ -75,7 +75,7 @@ impl StaticAABB
     /// Scales the bounding volume by the given amount
     ///
     /// `factor` - vector specifying how much to scale the volume in each dimension
-    #[allow(dead_code)]
+
     pub fn scale(&mut self, factor: TVec3<f32>)
     {
         self.x_range.min *= factor.x;

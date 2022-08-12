@@ -8,7 +8,7 @@ use crate::render_system::system_information::{TextureFormat, TextureInformation
 
 /// Represents a texture array that can be used to store textures. The array is immutable and holds
 /// textures of a specific size.
-#[allow(dead_code)] // Incorrect warnings from compiler- fields it says aren't read are actually used
+ // Incorrect warnings from compiler- fields it says aren't read are actually used
 pub struct TextureArray
 {
     buffers: Vec<u32>,
@@ -21,7 +21,7 @@ pub struct TextureArray
 /// Possible result of uploading a texture. This enum contains both success and error values;
 /// return result uses Option to differentiate between success and failure.
 #[derive(Debug)]
-#[allow(dead_code)] // Incorrect warnings from compiler- all variants are used when uploading texture
+ // Incorrect warnings from compiler- all variants are used when uploading texture
 pub enum TextureUploadResult
 {
     FailedToLoadFile(String),
@@ -118,7 +118,7 @@ impl TextureArray
     /// texture coordinates U and V coordinates respectfully
     ///
     /// `texture_properties` - the properties of the texture to upload
-    #[allow(dead_code)]
+
     pub fn add_texture_sequentially_from_file_stbi(&mut self, texture_properties: &TextureProperties) -> Result<TextureUploadResult, TextureUploadResult>
     {
         if self.number_textures_held == self.texture_array_info.number_textures
@@ -207,7 +207,7 @@ impl TextureArray
 
     /// Create mipmaps for the texture array. This should only be called once all textures have been
     /// uploaded into the array
-    #[allow(dead_code)]
+
     pub fn create_mipmaps(&self)
     {
         unsafe

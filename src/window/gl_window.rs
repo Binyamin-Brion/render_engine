@@ -74,56 +74,56 @@ impl GLWindowBuilder
         }
     }
 
-    #[allow(dead_code)]
+
     pub fn with_title<T: Into<String>>(&mut self, window_title: T) -> &mut Self
     {
         self.window_title = window_title.into();
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_default_window_settings(&mut self, default_settings: bool) -> &mut Self
     {
         self.default_window_settings = default_settings;
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_centre_screen(&mut self, centre_screen: bool) -> &mut Self
     {
         self.centre_screen = centre_screen;
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_window_resolution(&mut self, resolution: (u32, u32)) -> &mut Self
     {
         self.window_resolution = resolution;
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_window_position(&mut self, position: (u32, u32)) -> &mut Self
     {
         self.window_position = position;
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_window_hints(&mut self, mut hints: Vec<WindowHint>) -> &mut Self
     {
         self.window_hints.append(&mut hints);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn as_fullscreen(&mut self, fullscreen: bool) -> &mut Self
     {
         self.fullscreen = fullscreen;
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_forced_fps(&mut self, fps: i64) -> &mut Self
     {
         self.force_fps = Some(fps);
@@ -236,21 +236,21 @@ impl GLWindowBuilder
 impl GLWindow
 {
     /// Get the status of the movement keys
-    #[allow(dead_code)]
+
     pub fn get_movement_keys(&self) -> &MovementKeys
     {
         &self.wasd_keys
     }
 
     /// Query if the window should close in the next render loop
-    #[allow(dead_code)]
+
     pub fn should_window_close(&self) -> bool
     {
         self.window.should_close()
     }
 
     /// Notify that the window should close in the next render loop
-    #[allow(dead_code)]
+
     pub fn set_window_close(&mut self)
     {
         self.window.set_should_close(true);
@@ -267,7 +267,7 @@ impl GLWindow
     }
 
     /// Get the status of the movement keys
-    #[allow(dead_code)]
+
     pub fn get_movement_key_status(&self) -> MovementKeys
     {
         self.wasd_keys.clone()
@@ -275,7 +275,7 @@ impl GLWindow
 
     /// Get the latest position of the cursor, if any. Thus if a frame contains several mouse movement
     /// events, this function will return the position of the last event
-    #[allow(dead_code)]
+
     pub fn get_latest_cursor_pos(&self) -> Option<(i32, i32)>
     {
         self.latest_cursor_pos
@@ -283,7 +283,7 @@ impl GLWindow
 
     /// Get the last known change to the window dimensions. Once the history is cleared, this returns
     /// None until a new window dimension change occurs
-    #[allow(dead_code)]
+
     pub fn get_latest_window_dimensions(&self) -> Option<(i32, i32)>
     {
         self.latest_window_size

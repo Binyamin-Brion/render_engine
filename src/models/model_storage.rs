@@ -46,7 +46,7 @@ macro_rules! use_texture_type
 {
     ($materials: tt, $render_flow: tt, $render_system_index: tt, $($texture_type: tt, $fn_name: tt),+) =>
     {{
-        #[allow(dead_code)]
+
         struct MeshMaterial
         {
             $(
@@ -187,12 +187,10 @@ println!("Loaded: {:?}", location.as_ref());
         // texture arrays in the shaders
         let (material_location, texture_location) =
 
+            // At time of writing, only diffuse textures are used. To add others, follow same pattern
+            // of input to macro as diffuse. For example:  dissolve_texture, write_dissolve
             use_texture_type!(materials, render_flow, render_system_index,
-                         diffuse_texture, write_diffuse,
-                         dissolve_texture, write_dissolve,
-                         normal_texture, write_normal,
-                         shininess_texture, write_shininess,
-                         specular_texture, write_specular);
+                         diffuse_texture, write_diffuse);
 
         let mut model_geometry = Vec::new();
         let mut model_aabb = StaticAABB::point_aabb();

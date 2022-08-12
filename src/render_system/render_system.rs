@@ -357,7 +357,7 @@ impl RenderSystem
     /// Creates mipmaps for the texture array associated with the given name
     ///
     /// `texture_array_name` - the name of the texture to create mipmaps for
-    #[allow(dead_code)]
+
     pub fn create_texture_array_mipmaps<A: AsRef<str>>(&mut self, texture_array_name: A)
     {
         let texture_array_index = self.first_render_pass_resources.fragment_shader_resource.texture_lookup.get(texture_array_name.as_ref()).unwrap();

@@ -8,21 +8,18 @@ use
 };
 
 /// Get the location of the asset folder
-#[allow(dead_code)]
 pub fn get_asset_folder() -> PathBuf
 {
     get_root_directory().join("render_engine_assets")
 }
 
 /// Get the location of the model folder
-#[allow(dead_code)]
 pub fn get_model_folder() -> PathBuf
 {
     get_asset_folder().join("models")
 }
 
 /// Get the location of the debug / playback folder
-#[allow(dead_code)]
 pub fn get_debug_logs_folder() -> PathBuf
 {
     let path_directory = get_root_directory().join("debug_logs");

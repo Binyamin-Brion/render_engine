@@ -415,7 +415,7 @@ impl BoundingBoxTree
     /// Determines if an entity is static or is active
     ///
     /// `entity_id` - the entity to query
-    #[allow(dead_code)]
+
     pub fn is_entity_static(&self, entity_id: EntityId) -> Option<bool>
     {
         if let Some(section_lookup) = self.entities_index_lookup.get(&entity_id)
@@ -437,7 +437,7 @@ impl BoundingBoxTree
     }
 
     /// Get the smallest length if a section that the game world can be divided into
-    #[allow(dead_code)]
+
     pub fn atomic_world_section_length(&self) -> u32
     {
         self.atomic_section_length

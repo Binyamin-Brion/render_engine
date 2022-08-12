@@ -398,9 +398,7 @@ fn extract_shared_variables(vertex_shader: &VertexShaderInformation, frag_shader
         {
             match data_type
             {
-                SharedVariableType::Mat4Array(i) | SharedVariableType::Vec4Array(i) |
-                SharedVariableType::Vec3Array(i) | SharedVariableType::FloatArray(i) |
-                SharedVariableType::UIntArray(i) => format!(" [{}];", i),
+                SharedVariableType::Vec4Array(i) => format!(" [{}];", i),
                 _ => ";".to_string()
             }
         };
@@ -694,36 +692,6 @@ pub fn create_layout_binding_information(layout: LayoutType, index: u32, vao: &m
 
     return match layout
     {
-        LayoutType::Vec2Uint =>
-            {
-                vao.specify_layout_format(index, 2, gl::UNSIGNED_INT, 0);
-                LayoutBindingInformation
-                {
-                    binding_info: vec![BindingInformation::new(index, 0, (size_of::<TVec2<u32>>()) as i32)],
-                    num_layouts_used: 1,
-                    glsl_type: "uvec2".to_string()
-                }
-            },
-        LayoutType::Vec2Int =>
-            {
-                vao.specify_layout_format(index, 2, gl::INT, 0);
-                LayoutBindingInformation
-                {
-                    binding_info: vec![BindingInformation::new(index, 0, (size_of::<TVec2<i32>>()) as i32)],
-                    num_layouts_used: 1,
-                    glsl_type: "ivec2".to_string()
-                }
-            },
-        LayoutType::Vec2Float =>
-            {
-                vao.specify_layout_format(index, 2, gl::FLOAT, 0);
-                LayoutBindingInformation
-                {
-                    binding_info: vec![BindingInformation::new(index, 0, (size_of::<TVec2<f32>>()) as i32)],
-                    num_layouts_used: 1,
-                    glsl_type: "vec2".to_string()
-                }
-            },
         LayoutType::Vec3Float =>
             {
                 vao.specify_layout_format(index, 3, gl::FLOAT, 0);
@@ -744,16 +712,6 @@ pub fn create_layout_binding_information(layout: LayoutType, index: u32, vao: &m
                     glsl_type: "vec4".to_string()
                 }
             },
-        LayoutType::Vec3Uint =>
-            {
-                vao.specify_layout_format(index, 3, gl::UNSIGNED_INT, 0);
-                LayoutBindingInformation
-                {
-                    binding_info: vec![BindingInformation::new(index, 0, (size_of::<TVec3<u32>>()) as i32)],
-                    num_layouts_used: 1,
-                    glsl_type: "uvec3".to_string()
-                }
-            }
         LayoutType::Vec4Uint =>
             {
                 vao.specify_layout_format(index, 4, gl::UNSIGNED_INT, 0);
@@ -1113,24 +1071,6 @@ fn create_padded_uniform_block(vertex_shader_uniforms: &VertexShaderInformation,
                         {
                             type_id: TypeId::of::<TMat4<f32>>(),
                             num_elements
-                        };
-
-                        uniform_type_ids.insert(uniform.name.clone(), expected_source_info);
-                        uniform_entities.insert(uniform.name.clone(), entity_id);
-
-                        sub_padding_bytes = 0;
-                    }
-                UniformType::Vec4 =>
-                    {
-                        uniform_buffer_size += padding_required(uniform_buffer_size, alignment_mat4x4_float);
-
-                        let entity_id = ecs.create_entity();
-                        ecs.write_component::<UniformVec4>(entity_id, UniformVec4(vec4(0.0, 0.0, 0.0, 0.0)));
-
-                        let expected_source_info = ExpectedUniformData
-                        {
-                            type_id: TypeId::of::<TVec4<f32>>(),
-                            num_elements: 1
                         };
 
                         uniform_type_ids.insert(uniform.name.clone(), expected_source_info);

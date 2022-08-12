@@ -7,7 +7,6 @@ use render_engine::objects::entity_id::EntityId;
 use render_engine::window::gl_window::MIDDLE_BUTTON;
 use render_engine::window::input_state::{CurrentFrameInput, InputHistory};
 use render_engine::world::bounding_box_tree_v2::BoundingBoxTree;
-use serde::{Serialize, Deserialize};
 
 pub fn create_user_logic() -> Vec<UserInputLogic>
 {

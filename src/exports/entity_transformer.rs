@@ -141,49 +141,49 @@ impl EntityTransformationBuilder
         transformation_matrix
     }
 
-    #[allow(dead_code)]
+
     pub fn with_translation(&mut self, translation: Position) -> &mut Self
     {
         self.translation = Some(translation);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_velocity(&mut self, velocity: Velocity) -> &mut Self
     {
         self.velocity = Some(velocity);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_acceleration(&mut self, acceleration: Acceleration) -> &mut Self
     {
         self.acceleration = Some(acceleration);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_rotation(&mut self, rotation: Rotation) -> &mut Self
     {
         self.rotation = Some(rotation);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_rotation_velocity(&mut self, velocity: VelocityRotation) -> &mut Self
     {
         self.rotation_velocity = Some(velocity);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_rotation_acceleration(&mut self, acceleration: AccelerationRotation) -> &mut Self
     {
         self.rotation_acceleration = Some(acceleration);
         self
     }
 
-    #[allow(dead_code)]
+
     pub fn with_scale(&mut self, scale: Scale) -> &mut Self
     {
         self.scale = Some(scale);

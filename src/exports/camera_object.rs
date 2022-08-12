@@ -388,7 +388,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's position
     ///
     /// `position` - the position the camera should have
-    #[allow(dead_code)]
+
     pub fn with_position(&mut self, position: TVec3<f32>) -> &mut Self
     {
         self.position = position;
@@ -398,7 +398,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's direction. The given direction is normalized
     ///
     /// `direction` - the direction the camera should be facing
-    #[allow(dead_code)]
+
     pub fn with_direction(&mut self, direction: TVec3<f32>) -> &mut Self
     {
         self.direction = nalgebra_glm::normalize(&direction);
@@ -408,7 +408,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's FOV
     ///
     /// `fov` - the field of view in degrees
-    #[allow(dead_code)]
+
     pub fn with_fov(&mut self, fov: f32) -> &mut Self
     {
         self.fov = fov;
@@ -418,7 +418,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's near draw distance
     ///
     /// `near_draw_distance` - the near draw distance of the camera to create in world units
-    #[allow(dead_code)]
+
     pub fn with_near_draw_distance(&mut self, near_draw_distance: f32) -> &mut Self
     {
         self.near_draw_distance = near_draw_distance;
@@ -428,7 +428,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's far draw distance
     ///
     /// `far_draw_distance` - the far draw distance of the camera to create in world units
-    #[allow(dead_code)]
+
     pub fn with_far_draw_distance(&mut self, far_draw_distance: f32) -> &mut Self
     {
         self.far_draw_distance = far_draw_distance;
@@ -440,7 +440,7 @@ impl CameraBuilder
     ///
     /// `mouse_sensitivity` - the sensitivity of the mouse. Anything below one is less sensitive; anything
     ///                     more than one is greater sensitivity
-    #[allow(dead_code)]
+
     pub fn with_mouse_sensitivity(&mut self, mouse_sensitivity: f32) -> &mut Self
     {
         self.mouse_sensitivity = mouse_sensitivity;
@@ -452,7 +452,7 @@ impl CameraBuilder
     ///
     /// `speed_factor` - adjustment factor for the camera movement speed. Anything greater than one
     ///                  results in the camera moving faster; anything below one slows down the camera
-    #[allow(dead_code)]
+
     pub fn with_movement_speed_factor(&mut self, speed_factor: f32) -> &mut Self
     {
         self.movement_speed_factor = speed_factor;
@@ -462,7 +462,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's pitch
     ///
     /// `pitch` - the initial pitch of the camera in degrees
-    #[allow(dead_code)]
+
     pub fn with_pitch(&mut self, pitch: f32) -> &mut Self
     {
         self.pitch = pitch;
@@ -472,7 +472,7 @@ impl CameraBuilder
     /// Update the value used for the created Camera's yaw
     ///
     /// `yaw` - the initial yaw of the camera in degrees
-    #[allow(dead_code)]
+
     pub fn with_yaw(&mut self, yaw: f32) -> &mut Self
     {
         self.yaw = yaw;
@@ -483,7 +483,7 @@ impl CameraBuilder
     ///
     /// `max_lookup` - the maximum pitch above 0 the camera can have (measurements are in degrees).
     ///                 Typical value is 89
-    #[allow(dead_code)]
+
     pub fn with_max_lookup(&mut self, max_lookup: f32) -> &mut Self
     {
         self.max_angle_look_up = max_lookup;
@@ -494,7 +494,7 @@ impl CameraBuilder
     ///
     /// `min_lookdown` - the minimum pitch below 0 the camera can have (measurements are in degrees).
     ///                 Typical value is -89
-    #[allow(dead_code)]
+
     pub fn with_max_lookdown(&mut self, min_lookdown: f32) -> &mut Self
     {
         self.max_angle_look_down = min_lookdown;
@@ -504,7 +504,7 @@ impl CameraBuilder
     /// Sets the up vector of the camera to be built
     ///
     /// `up` - the up vector of the camera. Typically (0.0, 1.0, 0.0)
-    #[allow(dead_code)]
+
     pub fn with_up_vector(&mut self, up: TVec3<f32>) -> &mut Self
     {
         self.up = up;
@@ -512,7 +512,7 @@ impl CameraBuilder
     }
 
     /// Marks the created camera to be an orthographic camera
-    #[allow(dead_code)]
+
     pub fn as_orthographic(&mut self) -> &mut Self
     {
         self.is_orthographic = true;
@@ -522,7 +522,7 @@ impl CameraBuilder
     /// Sets the bottom threshold of the orthographic camera
     ///
     /// `bottom` - bottom value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_bottom_ortho(&mut self, bottom: f32) -> &mut Self
     {
         self.bottom = bottom;
@@ -532,7 +532,7 @@ impl CameraBuilder
     /// Sets the top threshold of the orthographic camera
     ///
     /// `top` - top value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_top_ortho(&mut self, top: f32) -> &mut Self
     {
         self.top = top;
@@ -542,7 +542,7 @@ impl CameraBuilder
     /// Sets the left threshold of the orthographic camera
     ///
     /// `left` - left value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_left_ortho(&mut self, left: f32) -> &mut Self
     {
         self.left = left;
@@ -552,7 +552,7 @@ impl CameraBuilder
     /// Sets the right threshold of the orthographic camera
     ///
     /// `right` - right value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_right_ortho(&mut self, right: f32) -> &mut Self
     {
         self.right = right;
@@ -562,7 +562,7 @@ impl CameraBuilder
     /// Sets the far threshold of the orthographic camera. This is the far draw distance
     ///
     /// `far` - far value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_far_ortho(&mut self, far: f32) -> &mut Self
     {
         self.far = far;
@@ -572,7 +572,7 @@ impl CameraBuilder
     /// Sets the far threshold of the orthographic camera. This is the near draw distance
     ///
     /// `near` - near value of the created camera
-    #[allow(dead_code)]
+
     pub fn with_near_ortho(&mut self, near: f32) -> &mut Self
     {
         self.near = near;

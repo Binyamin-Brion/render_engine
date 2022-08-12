@@ -742,17 +742,6 @@ impl ECS
 
         self.registered_types.iter().position(|x| x.type_id == type_id)
     }
-
-    /// Get the index of a component using its type identifier
-    ///
-    /// `type_id` - the type ID of the component whose index within the ECS is being queried
-    #[allow(dead_code)]
-    fn index_of_type(&self, type_id: TypeId) -> Option<usize>
-    {
-        let type_id = TypeIdentifier::from(type_id);
-
-        self.registered_types.iter().position(|x| x.type_id == type_id)
-    }
 }
 
 impl IndexInformation

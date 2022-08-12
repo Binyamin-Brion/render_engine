@@ -5,13 +5,12 @@ use crate::render_system::system_information::TextureInformation;
 const MIN_NUMBER_COLOUR_ATTACHMENTS: usize = 8;
 
 /// Abstraction over a frame buffer object, providing logic to create and use a FBO
-#[allow(dead_code)]
+
 pub struct FBO
 {
     fbo: u32,
     colour_texture: [Option<TextureArray>; MIN_NUMBER_COLOUR_ATTACHMENTS],
     depth_texture: Option<TextureArray>,
-    depth_stencil_texture: Option<TextureArray>,
     stencil_texture: Option<TextureArray>,
     no_colour_attachments: bool,
 }
@@ -29,7 +28,7 @@ pub enum AttachmentFormat
 
 /// Targets that the FBO can be bound to
 #[repr(u32)]
-#[allow(dead_code)]
+
 pub enum BindingTarget
 {
     DrawFrameBuffer = gl::DRAW_FRAMEBUFFER,
@@ -92,14 +91,14 @@ impl FBO
             None =>
                 {
                     unsafe{ gl::NamedFramebufferDrawBuffers(fbo, colour_attachments.len() as i32, colour_attachments.as_ptr()) }
-                    Ok(FBO{ fbo, colour_texture, depth_texture, depth_stencil_texture, stencil_texture, no_colour_attachments: colour_attachments.is_empty() })
+                    Ok(FBO{ fbo, colour_texture, depth_texture, stencil_texture, no_colour_attachments: colour_attachments.is_empty() })
                 },
             Some(i) =>
                 {
                     if i == gl::FRAMEBUFFER_COMPLETE
                     {
                         unsafe{ gl::NamedFramebufferDrawBuffers(fbo, colour_attachments.len() as i32, colour_attachments.as_ptr()) }
-                        Ok(FBO{ fbo, colour_texture, depth_texture, depth_stencil_texture, stencil_texture, no_colour_attachments: colour_attachments.is_empty() })
+                        Ok(FBO{ fbo, colour_texture, depth_texture, stencil_texture, no_colour_attachments: colour_attachments.is_empty() })
                     }
                     else
                     {

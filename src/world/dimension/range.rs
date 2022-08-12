@@ -21,11 +21,11 @@ macro_rules! create_range {
             ///
             /// `min` - the starting point of the range
             /// `max` - the end point of the range. This variable must be bigger than min
-            #[allow(dead_code)]
+
             pub fn new(min: f32, max: f32) -> $x { $x{ min, max } }
 
             /// Get the centre of the range
-            #[allow(dead_code)]
+
             pub fn centre(&self) -> f32
             {
                 (self.min + self.max) / 2.0
@@ -34,7 +34,7 @@ macro_rules! create_range {
             /// Combine two ranges such that the resulting range can hold both ranges
             ///
             /// `other_range` - the other range to combine with this range
-            #[allow(dead_code)]
+
             pub fn combine(&self, other_range: &$x) -> $x
             {
                 let epsilon = 0.01; // TODO: Epsilon should not be hard coded
@@ -61,25 +61,25 @@ macro_rules! create_range {
             }
 
             /// Get the length of the range
-            #[allow(dead_code)]
+
             pub fn length(&self) -> f32 { self.max - self.min }
 
             /// Check if the other range overlaps with this one
             ///
             /// `range` - the other range to check for an overlap
-            #[allow(dead_code)]
+
             pub fn overlap_range(&self, range: &$x) -> bool { self.min <= range.max && self.max >= range.min }
 
             /// Checks if a point is within the range
             ///
             /// `point` - point to check if it is within this range
-            #[allow(dead_code)]
+
             pub fn point_within(&self, point: f32) -> bool { self.min <= point && point <= self.max }
 
             /// Move the range by the given amount
             ///
             /// `amount` - the amount by which to move the range by
-            #[allow(dead_code)]
+
             pub fn translate(&mut self, amount: f32){ self.min += amount; self.max += amount; }
         }
 

@@ -13,14 +13,8 @@ use crate::space_logic::helper_functionality::directory_lookup::get_model_dir;
 
 pub struct MineProducer;
 
-fn mine_producer_logic(this: EntityId, ecs: &ECS, _tree: &BoundingBoxTree, delta_time: f32) -> Vec<EntityChangeInformation>
+fn mine_producer_logic(_: EntityId, _: &ECS, _tree: &BoundingBoxTree, _: f32) -> Vec<EntityChangeInformation>
 {
-    // TODO: Why is rotation axis always increasing?
-    let rotation = ecs.get_copy::<Rotation>(this).unwrap();
-    println!("Rotation is: {:?} | {}", rotation.get_rotation_axis(), rotation.get_rotation());
-
-
-
     vec![]
 }
 
